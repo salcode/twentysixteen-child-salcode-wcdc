@@ -1,9 +1,11 @@
 <?php
 /**
- * The template part for displaying single posts
+ * The template part for displaying single posts.
+ *
+ * Child theme override template.
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
+ * @subpackage Twenty_Sixteen_fe_wcdc_childtheme
  * @since Twenty Sixteen 1.0
  */
 ?>
