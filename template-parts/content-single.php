@@ -32,6 +32,22 @@
 		<?php
 			the_content();
 
+			// Display the learn more URL if one is present in post meta.
+			$post_id = get_the_ID();
+			$url = get_post_meta( $post_id, 'fe_wcdc_learn_more', true );
+
+			if ( $url ) {
+
+				printf( '<a class="fe-wcdc-btn fe-wcdc-btn-learn-more" href="%1$s">%2$s</a>',
+					// Replace %1$s with escaped version of URL.
+					esc_url( $url ),
+					// Replace %2$s with translated and escaped version of "Learn More".
+					esc_html__( 'Learn More' )
+				);
+
+			}
+
+
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentysixteen' ) . '</span>',
 				'after'       => '</div>',
