@@ -12,7 +12,16 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php
+		the_title( '<h1 class="entry-title">', '</h1>' );
+
+		// Display the subtitle if one is present in post meta.
+		$post_id = get_the_ID();
+		$subtitle = get_post_meta( get_the_ID(), 'fe_wcdc_subtitle', true );
+		if ( $subtitle ) {
+			echo '<h2 class="wcdc-entry-subtitle">' . esc_html( $subtitle ) . '</h2>';
+		}
+		?>
 	</header><!-- .entry-header -->
 
 	<?php twentysixteen_excerpt(); ?>
