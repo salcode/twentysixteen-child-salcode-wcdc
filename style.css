@@ -5,7 +5,7 @@ Author: Sal Ferrarello
 Author URI: https://salferrarello.com/
 Template: twentysixteen
 Description: Demo Theme for displaying Post Meta Values.
-Version: 1.2.0
+Version: 1.3.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: wcdc
@@ -98,4 +98,12 @@ Text Domain: wcdc
   color: #fff;
   background-color: #286090;
   border-color: #204d74;
+}
+
+/*******************************
+ ****** Title Colors *******
+ *******************************/
+
+.entry-header .wcdc-entry-subtitle {
+	color: #1a1a1a;
 }
