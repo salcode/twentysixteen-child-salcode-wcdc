@@ -11,7 +11,18 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<?php
+		/**
+		 * Get the color to use when displaying the title.
+		 */
+		$post_id = get_the_ID();
+		$color   = get_post_meta( $post_id, 'fe_wcdc_color', true );
+		if ( ! $color ) {
+			// Fallback color is black.
+			$color = '#000';
+		}
+	?>
+	<header class="entry-header" style="color: <?php echo esc_attr( $color ); ?>;">
 		<?php
 		the_title( '<h1 class="entry-title">', '</h1>' );
 
